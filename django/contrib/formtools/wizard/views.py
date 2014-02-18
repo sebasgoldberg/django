@@ -413,7 +413,7 @@ class WizardView(TemplateView):
         elif issubclass(self.form_list[step], forms.models.BaseModelFormSet):
             # If the form is based on ModelFormSet, add queryset if available
             # and not previous set.
-            kwargs.setdefault('queryset', self.get_form_instance(step))
+            kwargs.setdefault('instance', self.get_form_instance(step))
         return self.form_list[step](**kwargs)
 
     def process_step(self, form):
